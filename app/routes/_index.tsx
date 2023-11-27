@@ -18,10 +18,11 @@ export function headers({
 export default function Index() {
   return (
     <main style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h1>Welcome to Remix</h1>
+      <h1 className="font-bold text-2xl">Welcome to Remix</h1>
       <ul>
         <li>
           <a
+            className="text-red-200"
             target="_blank"
             href="https://remix.run/tutorials/blog"
             rel="noreferrer noopener"
