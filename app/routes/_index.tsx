@@ -1,3 +1,5 @@
+import ListItem from "~/components/list-item";
+
 export function headers({
   loaderHeaders,
   parentHeaders,
@@ -18,35 +20,15 @@ export function headers({
 export default function Index() {
   return (
     <main style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h1 className="font-bold text-2xl">Welcome to Remix</h1>
-      <ul>
+      <ul className="mt-5 w-full space-y-6 bg-slate-500 px-6 py-2 rounded-md">
         <li>
-          <a
-            className="text-red-200"
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer noopener"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
+          <ListItem />
         </li>
         <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer noopener"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
+          <ListItem />
         </li>
         <li>
-          <a
-            target="_blank"
-            href="https://remix.run/docs"
-            rel="noreferrer noopener"
-          >
-            Remix Docs
-          </a>
+          <ListItem />
         </li>
       </ul>
     </main>
