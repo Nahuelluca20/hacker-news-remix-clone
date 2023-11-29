@@ -21,7 +21,7 @@ export function headers({
 export default function Index() {
   return (
     <Layout>
-      <ul className="mt-5 w-full space-y-6 bg-slate-500/80 px-6 py-2 rounded-md">
+      <ul className="mt-5 w-full space-y-6 bg-slate-800 px-6 py-2 rounded-md">
         <li>
           <ListItem />
         </li>

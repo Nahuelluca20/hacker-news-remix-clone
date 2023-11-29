@@ -5,7 +5,7 @@ import Layout from "~/components/layout";
 export default function Jobs() {
   return (
     <Layout>
-      <ul className="mt-5 space-y-6 w-full bg-slate-500/80 px-6 py-2 rounded-md">
+      <ul className="mt-5 space-y-6 w-full bg-slate-800 px-6 py-2 rounded-md">
         <li>
           <JobsListItem />
         </li>

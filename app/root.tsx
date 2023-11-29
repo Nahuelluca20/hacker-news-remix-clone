@@ -16,10 +16,10 @@ export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
 export const meta: MetaFunction = () => [
   {
-    charset: "utf-8",
-    title: "New Remix App",
-    viewport: "width=device-width,initial-scale=1",
+    name: "viewport",
+    content: "width=device-width,initial-scale=1",
   },
+  { title: "New Remix App" },
 ];
 
 export default function App() {
@@ -29,7 +29,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="bg-slate-900  my-6 md:max-w-[610px]  lg:max-w-[1082px] xl:max-w-[1444px] w-full mx-auto">
+      <body className="bg-slate-900 my-6 md:max-w-[610px] lg:max-w-[1082px] xl:max-w-[1444px] w-full mx-auto">
         <Header />
         <Outlet />
         <ScrollRestoration />
