@@ -29,7 +29,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="bg-slate-900 my-6 md:max-w-[610px] lg:max-w-[1082px] xl:max-w-[1444px] w-full mx-auto">
+      <body className="px-2 bg-slate-900 my-6 md:max-w-[610px] lg:max-w-[1082px] xl:max-w-[1444px] w-full mx-auto">
         <Header />
         <Outlet />
         <ScrollRestoration />
