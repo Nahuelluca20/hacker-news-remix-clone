@@ -1,10 +1,11 @@
 import React from "react";
 import JobsListItem from "~/components/jobs-list-item";
+import Layout from "~/components/layout";
 
 export default function Jobs() {
   return (
-    <main style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <ul className="mt-5 space-y-6 w-full bg-slate-500 px-6 py-2 rounded-md">
+    <Layout>
+      <ul className="mt-5 space-y-6 w-full bg-slate-500/80 px-6 py-2 rounded-md">
         <li>
           <JobsListItem />
         </li>
@@ -15,6 +16,6 @@ export default function Jobs() {
           <JobsListItem />
         </li>
       </ul>
-    </main>
+    </Layout>
   );
 }

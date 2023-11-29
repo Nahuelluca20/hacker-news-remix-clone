@@ -3,7 +3,7 @@ export default function ListItem() {
     <div>
       <div className="flex gap-2">
         <a
-          className="text-black font-bold text-md"
+          className="text-stone-950 font-bold text-md"
           target="_blank"
           href={
             "https://www.ycombinator.com/companies/spine-ai/jobs/Z1hz3BZ-founding-ml-engineer-scientist"
