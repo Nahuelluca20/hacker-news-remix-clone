@@ -1,32 +1,44 @@
-export default function ListItem() {
+export default function ListItem({
+  title,
+  score,
+  url,
+  time,
+  by,
+  comments,
+}: {
+  title: string;
+  score: number;
+  url: string;
+  time: number;
+  by: string;
+  comments: number[];
+}) {
   return (
     <div>
       <div className="flex gap-2">
         <a
           className="text-zinc-400 font-bold text-md"
           target="_blank"
-          href={
-            "https://www.ycombinator.com/companies/spine-ai/jobs/Z1hz3BZ-founding-ml-engineer-scientist"
-          }
+          href={url}
         >
-          $20k bounty was claimed
+          {title}
         </a>
         <span className="text-white hover:underline font-medium text-sm">
           <a href="www.ycombinator.com">(prettier.io)</a>
         </span>
       </div>
       <span className="text-white text-sm">
-        462 points by{" "}
+        {score} points by{" "}
         <a
           className="hover:underline"
           href="https://remix.hnclone.win/user?id=conaclos"
         >
-          conachols
+          {by}
         </a>{" "}
         3 hours ago |{" "}
         <span className="hover:underline cursor-pointer">hide</span> |
         <a className="hover:underline" href="item?id=38434613">
-          181 comments
+          {comments.length} comments
         </a>
       </span>
     </div>

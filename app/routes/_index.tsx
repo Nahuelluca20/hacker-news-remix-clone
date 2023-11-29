@@ -35,19 +35,24 @@ export async function loader() {
 }
 
 export default function Index() {
-  const stories = useLoaderData();
+  const stories = useLoaderData<typeof loader>();
+  console.log(stories);
   return (
     <Layout>
       <ul className="mt-5 w-full space-y-6 bg-slate-800 px-6 py-2 rounded-md">
-        <li>
-          <ListItem />
-        </li>
-        <li>
-          <ListItem />
-        </li>
-        <li>
-          <ListItem />
-        </li>
+        {stories &&
+          stories.map((story: any) => (
+            <li key={story.id}>
+              <ListItem
+                title={story.title}
+                score={story.score}
+                url={story.url}
+                time={story.time}
+                by={story.by}
+                comments={story.kids}
+              />
+            </li>
+          ))}
       </ul>
     </Layout>
   );
