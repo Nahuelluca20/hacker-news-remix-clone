@@ -23,9 +23,9 @@ export default function ListItem({
         >
           {title}
         </a>
-        <span className="text-white hover:underline font-medium text-sm">
+        {/* <span className="text-white hover:underline font-medium text-sm">
           <a href="www.ycombinator.com">(prettier.io)</a>
-        </span>
+        </span> */}
       </div>
       <span className="text-white text-sm">
         {score} points by{" "}

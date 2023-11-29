@@ -10,9 +10,6 @@ export function headers({
   loaderHeaders: Headers;
   parentHeaders: Headers;
 }) {
-  console.log(
-    "This is an example of how to set caching headers for a route, feel free to change the value of 60 seconds or remove the header"
-  );
   return {
     // This is an example of how to set caching headers for a route
     // For more info on headers in Remix, see: https://remix.run/docs/en/v1/route/headers
@@ -22,7 +19,7 @@ export function headers({
 
 export async function loader() {
   const res = await fetch(
-    `https://hacker-news.firebaseio.com/v0/beststories.json?print=pretty&orderBy=%22$key%22&limitToFirst=10`
+    `https://hacker-news.firebaseio.com/v0/beststories.json?print=pretty&orderBy=%22$key%22&limitToFirst=20`
   );
 
   const data = await res.json();
@@ -36,7 +33,6 @@ export async function loader() {
 
 export default function Index() {
   const stories = useLoaderData<typeof loader>();
-  console.log(stories);
   return (
     <Layout>
       <ul className="mt-5 w-full space-y-6 bg-slate-800 px-6 py-2 rounded-md">
