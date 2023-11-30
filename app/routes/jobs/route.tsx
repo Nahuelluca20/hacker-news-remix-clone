@@ -1,4 +1,3 @@
-import React from "react";
 import JobsListItem from "~/components/jobs-list-item";
 import Layout from "~/components/layout";
 
