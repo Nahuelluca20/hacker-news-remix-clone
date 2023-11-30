@@ -39,7 +39,7 @@ export default function ListItem({
         {timeAgo(time)} |{" "}
         <span className="hover:underline cursor-pointer">hide</span> |
         <a className="hover:underline" href={`item?id=${id}`}>
-          {" "}
+          {"  "}
           {comments?.length} comments
         </a>
       </span>
