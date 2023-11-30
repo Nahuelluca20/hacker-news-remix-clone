@@ -16,4 +16,5 @@ export interface IComment {
   text: string;
   kids: number[];
   parent?: number;
+  children?: IComment[];
 }
