@@ -1,3 +1,5 @@
+import { timeAgo } from "~/utils/timeAgo";
+
 export default function ListItem({
   title,
   score,
@@ -23,9 +25,6 @@ export default function ListItem({
         >
           {title}
         </a>
-        {/* <span className="text-white hover:underline font-medium text-sm">
-          <a href="www.ycombinator.com">(prettier.io)</a>
-        </span> */}
       </div>
       <span className="text-white text-sm">
         {score} points by{" "}
@@ -35,9 +34,10 @@ export default function ListItem({
         >
           {by}
         </a>{" "}
-        3 hours ago |{" "}
+        {timeAgo(time)} |{" "}
         <span className="hover:underline cursor-pointer">hide</span> |
         <a className="hover:underline" href="item?id=38434613">
+          {" "}
           {comments?.length} comments
         </a>
       </span>

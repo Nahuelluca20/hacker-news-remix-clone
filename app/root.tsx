@@ -19,7 +19,7 @@ export const meta: MetaFunction = () => [
     name: "viewport",
     content: "width=device-width,initial-scale=1",
   },
-  { title: "New Remix App" },
+  { title: "HackerNews Clone" },
 ];
 
 export default function App() {
