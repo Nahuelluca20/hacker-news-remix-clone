@@ -2,6 +2,7 @@ import { timeAgo } from "~/utils/timeAgo";
 
 export default function ListItem({
   title,
+  id,
   score,
   url,
   time,
@@ -10,6 +11,7 @@ export default function ListItem({
 }: {
   title: string;
   score: number;
+  id: number;
   url: string;
   time: number;
   by: string;
@@ -36,7 +38,7 @@ export default function ListItem({
         </a>{" "}
         {timeAgo(time)} |{" "}
         <span className="hover:underline cursor-pointer">hide</span> |
-        <a className="hover:underline" href="item?id=38434613">
+        <a className="hover:underline" href={`item?id=${id}`}>
           {" "}
           {comments?.length} comments
         </a>

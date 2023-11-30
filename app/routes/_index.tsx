@@ -27,9 +27,10 @@ export default function Index() {
     <Layout>
       <ul className="mt-5 w-full space-y-6 bg-slate-800 px-6 py-2 rounded-md">
         {stories &&
-          stories.map((story: IStory) => (
+          stories.map((story) => (
             <li key={story.id}>
               <ListItem
+                id={story.id}
                 title={story.title}
                 score={story.score}
                 url={story.url}
