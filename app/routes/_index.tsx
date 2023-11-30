@@ -2,20 +2,7 @@ import { useLoaderData } from "@remix-run/react";
 import Layout from "~/components/layout";
 import ListItem from "~/components/list-item";
 import { getStory } from "~/utils/fetch-data";
-
-export function headers({
-  loaderHeaders,
-  parentHeaders,
-}: {
-  loaderHeaders: Headers;
-  parentHeaders: Headers;
-}) {
-  return {
-    // This is an example of how to set caching headers for a route
-    // For more info on headers in Remix, see: https://remix.run/docs/en/v1/route/headers
-    "Cache-Control": "public, max-age=60, s-maxage=60",
-  };
-}
+import { json } from "@remix-run/node";
 
 export async function loader() {
   const res = await fetch(
@@ -27,8 +14,10 @@ export async function loader() {
   const storyPromises = data.map(async (story: any) => getStory(story));
 
   const stories = await Promise.all(storyPromises);
-
-  return stories;
+  let headers = { "Cache-Control": "public, max-age=120" };
+  return json(stories, {
+    headers,
+  });
 }
 
 export default function Index() {
