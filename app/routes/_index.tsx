@@ -1,7 +1,7 @@
 import { useLoaderData } from "@remix-run/react";
 import Layout from "~/components/layout";
 import ListItem from "~/components/list-item";
-import { getStory } from "~/utils/fetch-data";
+import { getItem } from "~/utils/fetch-data";
 import { json } from "@remix-run/node";
 import { IStory } from "~/utils/types";
 
@@ -12,7 +12,7 @@ export async function loader() {
 
   const data = await res.json();
 
-  const storyPromises = data.map(async (story: any) => getStory(story));
+  const storyPromises = data.map(async (story: any) => getItem(story));
 
   const stories: IStory[] = await Promise.all(storyPromises);
   let headers = { "Cache-Control": "public, max-age=120" };

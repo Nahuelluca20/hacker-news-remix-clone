@@ -8,3 +8,12 @@ export interface IStory {
   descendants: number;
   kids: number[];
 }
+
+export interface IComment {
+  id: number;
+  by: string;
+  time: number;
+  text: string;
+  kids: number[];
+  parent?: number;
+}
