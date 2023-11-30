@@ -38,7 +38,7 @@ export default function ListItem({
         3 hours ago |{" "}
         <span className="hover:underline cursor-pointer">hide</span> |
         <a className="hover:underline" href="item?id=38434613">
-          {comments.length} comments
+          {comments?.length} comments
         </a>
       </span>
     </div>

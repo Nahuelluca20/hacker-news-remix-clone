@@ -5,8 +5,11 @@ import { getStory } from "~/utils/fetch-data";
 import { json } from "@remix-run/node";
 
 export async function loader() {
+  // const res = await fetch(
+  //   `https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty&orderBy=%22$key%22&limitToFirst=30`
+  // );
   const res = await fetch(
-    `https://hacker-news.firebaseio.com/v0/beststories.json?print=pretty&orderBy=%22$key%22&limitToFirst=20`
+    `https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty&limitToFirst=30&orderBy=%22$key%22`
   );
 
   const data = await res.json();
