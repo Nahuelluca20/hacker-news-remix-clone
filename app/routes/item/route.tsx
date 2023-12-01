@@ -1,4 +1,4 @@
-import type { LoaderFunctionArgs } from "@remix-run/node";
+import type { LoaderFunctionArgs, HeadersFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { getComments } from "~/utils/fetch-data";
@@ -10,6 +10,12 @@ import {
 
 import { IStory } from "~/utils/types";
 
+export let headers: HeadersFunction = () => {
+  return {
+    "Cache-Control": "public,  max-age=120",
+  };
+};
+
 export async function loader({ request }: LoaderFunctionArgs) {
   const searchParams = getSearchParamsFromRequest(request);
   const newsItemId = searchParams.get(URLSearchParamFields.ID);
@@ -19,21 +25,19 @@ export async function loader({ request }: LoaderFunctionArgs) {
   );
   const data: IStory = await res.json();
   const getAllComments = await getComments(data.kids);
-  // const comments = await Promise.all(getAllComments);
 
-  let headers = { "Cache-Control": "public, max-age=120" };
-  return json(data, { headers });
+  return json(getAllComments);
 }
 
 export default function Item() {
   const comments = useLoaderData<typeof loader>();
-  console.log(comments);
   return (
-    <div>
-      <h1>HOLA</h1>
-      {/* {comments.map((comment) => (
-        <Comment key={comment.id} comment={comment} />
-      ))} */}
-    </div>
+    <ul className="mt-5 w-full space-y-6 bg-slate-800 px-6 py-2 rounded-md">
+      {comments.map((comment) => (
+        <li key={comment.id}>
+          <Comment comment={comment} />
+        </li>
+      ))}
+    </ul>
   );
 }
